@@ -1,0 +1,17 @@
+<div class="products-list">
+  <p>Products added: {{addedProducts.length}}</p>
+  <a [routerLink] = "['shopping-card']">Shopping Card</a>
+  <div class="product" *ngFor='let product of products;'>
+    <div class="product-image">
+      <img src="{{product.img}}" alt="">
+    </div>
+    <div class="product-content">
+      <h1 class="product-title">{{product.title}}</h1>
+      <p class="product-price">{{product.price}}$</p>
+
+
+      <button *ngIf="!product.inCard" (click)="add(product.id)">Add +</button>
+      <button *ngIf="product.inCard" (click)="remove(product.id)">Remove -</button>
+    </div>
+  </div>
+</div>

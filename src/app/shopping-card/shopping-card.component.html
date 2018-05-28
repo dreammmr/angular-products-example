@@ -1,0 +1,16 @@
+<div class="products-list">
+  <p>Products added: {{addedProducts.length}}</p>
+  <p>Sum: {{calculatePrice()}}$</p>
+  <a [routerLink] = "['']">Products</a>
+  <div class="product" *ngFor='let product of addedProducts;'>
+    <div class="product-image">
+      <img src="{{product.img}}" alt="">
+    </div>
+    <div class="product-content">
+      <h1 class="product-title">{{product.title}}</h1>
+      <p class="product-price">{{product.price}}$</p>
+
+      <button (click)="remove(product.id)">Remove -</button>
+    </div>
+  </div>
+</div>
